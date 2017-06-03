@@ -309,7 +309,7 @@ void loop() {
   ArduinoOTA.handle();
   if ( WS_motion_num != -1 ){
     uint32_t current_micros = micros();
-    if ( current_micros >= (last_motion + MOTION_MEASURE_PERIOD_US) ){
+    if ( (current_micros - last_motion) >= MOTION_MEASURE_PERIOD_US ){
       uint32_t period = current_micros - last_motion;
       last_motion = current_micros;
       ADNS_motionburst();
@@ -326,9 +326,6 @@ void loop() {
       jsonroot["surfq"] = surfq; 
       jsonroot["period"] = period;
       size_t size = jsonroot.printTo(charbuffer, sizeof(charbuffer));
-      /*Serial.println(period);
-      os_sprintf(charbuffer, "{period:%d}", period);
-      size_t size = strlen(charbuffer);*/
       webSocket.sendTXT(WS_motion_num, charbuffer, size);
     }
   }

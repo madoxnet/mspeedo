@@ -19,7 +19,7 @@ Experiments with different speed inputs for vehicle speed measurement.
 |MISO|MISO|GPIO12|
 |MOSI|MOSI|GPIO13|
 |SCLK|SCLK|GPIO14|
-|RST|Reset|GPIO2|
+|RST|Reset|GPIO5|
 |NPD|/Power Down|N/C|
 |LED|LED control output|N/C|
 

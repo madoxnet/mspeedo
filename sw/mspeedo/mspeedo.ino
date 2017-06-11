@@ -38,7 +38,7 @@
 #define MOTION_MEASURE_PERIOD_US       10000
 
 //Pin Definitions
-#define RESET_PIN                      2
+#define RESET_PIN                      5
 #define CS_PIN                         4
 
 //WiFi configuration
